@@ -1,7 +1,7 @@
 CC = g++ -std=c++17
 CFLAGS = -Wall -Werror -Wextra
 OS := $(shell uname)
-TESTFILE = tests/unit_tests.cc model/mazemodel.cpp
+TESTFILE = tests/unit_tests.cc model/mazemodel.cc
 
 ifeq ($(OS),Linux)
 FLAGS = -lgtest -lm -lpthread -lrt -lsubunit -fprofile-arcs -ftest-coverage
@@ -33,10 +33,6 @@ clean:
 	@rm -rf *.dSYM
 	@rm -rf ./view/.qmake.stash
 
-
-dvi: 
-	@open description/dvi.md
-
 dist:
 	rm -rf Archive_Maze/
 	mkdir Archive_Maze/
@@ -56,4 +52,4 @@ open:
 	$(PROGOPEN)
 
 clang:
-	find . \( -name '*.h' -o -name '*.cc' -o -name '*.cpp' \) -print0 | xargs -0 clang-format -style=Google -n
+	find . \( -name '*.h' -o -name '*.cc' \) -print0 | xargs -0 clang-format -style=Google -n

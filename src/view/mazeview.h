@@ -18,7 +18,7 @@ class MazeView : public QMainWindow {
   Q_OBJECT
 
  public:
-  MazeView(MazeController *control, QWidget *parent = nullptr);
+  MazeView(s21::MazeController *control, QWidget *parent = nullptr);
   ~MazeView();
 
  private slots:
@@ -29,7 +29,7 @@ class MazeView : public QMainWindow {
 
  private:
   Ui::MazeView *ui_;
-  MazeGraphicsView *maze_;
+  s21::MazeGraphicsView *maze_;
 };
 
 #endif  // MAZEVIEW_H

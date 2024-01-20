@@ -2,11 +2,11 @@
 
 #include "ui_mazeview.h"
 
-MazeView::MazeView(MazeController *control, QWidget *parent)
+MazeView::MazeView(s21::MazeController *control, QWidget *parent)
     : QMainWindow(parent), ui_(new Ui::MazeView) {
   ui_->setupUi(this);
   setFixedSize(size());
-  maze_ = new MazeGraphicsView(ui_->graphicsView, control);
+  maze_ = new s21::MazeGraphicsView(ui_->graphicsView, control);
 
   connect(ui_->buttonOpen, SIGNAL(clicked()), this, SLOT(openFileClicked()));
   connect(ui_->buttonSave, SIGNAL(clicked()), this, SLOT(saveFileClicked()));

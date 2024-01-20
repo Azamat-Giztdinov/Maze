@@ -1,8 +1,6 @@
 #ifndef MAZEGRAPHICSVIEW_H
 #define MAZEGRAPHICSVIEW_H
 
-//#define DEB
-
 #include <QGraphicsRectItem>
 #include <QGraphicsScene>
 #include <QGraphicsView>
@@ -10,6 +8,8 @@
 #include <vector>
 
 #include "../controller/mazecontroller.h"
+
+namespace s21 {
 
 class MazeGraphicsView : public QGraphicsView {
  public:
@@ -48,5 +48,7 @@ class MazeGraphicsView : public QGraphicsView {
   QVector<QPointF> points_start_and_end;
   QVector<QGraphicsLineItem *> path_lines_;
 };
+
+}  // namespace s21
 
 #endif  // MAZEGRAPHICSVIEW_H

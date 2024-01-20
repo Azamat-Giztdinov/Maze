@@ -1,5 +1,7 @@
 #include "mazegraphicsview.h"
 
+namespace s21 {
+
 MazeGraphicsView::MazeGraphicsView(QGraphicsView* qgraph,
                                    MazeController* controll)
     : QGraphicsView(qgraph), controller_(controll) {
@@ -131,3 +133,5 @@ void MazeGraphicsView::printWay() {
     scene_->addItem(line);
   }
 }
+
+}  // namespace s21

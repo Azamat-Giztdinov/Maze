@@ -14,14 +14,14 @@ void expectVectorsEqual(const std::vector<std::pair<int, int>>& expected,
 }
 
 TEST(Generation, Test_2) {
-  MazeModel maze;
+  s21::MazeModel maze;
   maze.generateMaze(15, 13);
   EXPECT_EQ(maze.getRows(), 15);
   EXPECT_EQ(maze.getCols(), 13);
 }
 
 TEST(Path, Test_3) {
-  MazeModel maze;
+  s21::MazeModel maze;
   maze.parseFile("./tests/maze1.txt");
   std::pair<int, int> start = {0, 0};
   std::pair<int, int> end = {3, 3};
@@ -32,19 +32,19 @@ TEST(Path, Test_3) {
 }
 
 TEST(MazeSaverTest, GetSizeXTest) {
-  MazeModel maze;
+  s21::MazeModel maze;
   maze.parseFile("./tests/maze2.txt");
   EXPECT_EQ(maze.getCols(), 3);
 }
 
 TEST(MazeSaverTest, GetSizeYTest) {
-  MazeModel maze;
+  s21::MazeModel maze;
   maze.parseFile("./tests/maze2.txt");
   EXPECT_EQ(maze.getRows(), 3);
 }
 
 TEST(MazeSaverTest, SaveCurrentMazeTest) {
-  MazeModel maze;
+  s21::MazeModel maze;
   maze.parseFile("./tests/maze2.txt");
   maze.saveFile("./tests/saveMaze.txt");
   std::ifstream file("./tests/saveMaze.txt");
@@ -66,7 +66,7 @@ TEST(MazeSaverTest, SaveCurrentMazeTest) {
 }
 
 TEST(MazeSaverTest, FileOpenTest) {
-  MazeModel maze;
+  s21::MazeModel maze;
   maze.parseFile("./tests/maze2.txt");
   maze.saveFile("./tests/saveMaze2.txt");
   std::ifstream file("./tests/saveMaze2.txt");

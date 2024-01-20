@@ -2,6 +2,7 @@
 
 #include <iostream>
 
+namespace s21 {
 void MazeModel::parseFile(std::string filepath) {
   std::ifstream ifs(filepath);
   if (!(correct_ = ifs.is_open())) {
@@ -42,7 +43,7 @@ void MazeModel::saveWall(std::ofstream& ofs, matrix& vect) {
 MazeModel::matrix MazeModel::parseMatrix(std::ifstream& ifs) {
   matrix result(this->rows_, std::vector<int>(this->cols_, 0));
   for (int i = 0; i < this->rows_; ++i) {
-    for (int j = 0; j < this->cols_; j++) {
+    for (int j = 0; j < this->cols_; ++j) {
       ifs >> result[i][j];
       if (result[i][j] != 0) {
         result[i][j] = 1;
@@ -231,3 +232,5 @@ std::vector<std::pair<int, int>> MazeModel::pathMaze(std::pair<int, int> pos) {
   }
   return path;
 }
+
+}  // namespace s21

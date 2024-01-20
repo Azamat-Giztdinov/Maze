@@ -3,6 +3,8 @@
 
 #include "../model/mazemodel.h"
 
+namespace s21 {
+
 class MazeController {
  public:
   using matrix = std::vector<std::vector<int>>;
@@ -23,5 +25,7 @@ class MazeController {
  private:
   MazeModel* model_;
 };
+
+}  // namespace s21
 
 #endif  // A1_MAZE_SRC_CONTROLLER_MAZECONTROLLER_H_

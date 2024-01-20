@@ -8,6 +8,7 @@
 #include <sstream>
 #include <vector>
 
+namespace s21 {
 class MazeModel {
  public:
   using matrix = std::vector<std::vector<int>>;
@@ -49,4 +50,5 @@ class MazeModel {
   void mergingLineFields(int row, int idx);
 };
 
+}  // namespace s21
 #endif  // A1_MAZE_SRC_MODEL_MAZEMODEL_H_
